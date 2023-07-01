@@ -1,2 +1,2 @@
 # Bits_AIML_Mtech
-Bits masters compiled data
+This repo contains lectures and some assignment/lab solutions for AIML Mtech course, Summer'23

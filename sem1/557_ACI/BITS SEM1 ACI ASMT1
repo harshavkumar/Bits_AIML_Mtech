@@ -1,0 +1,28 @@
+BITS SEM1 ACI ASMT1 
+
+1. PEAS:
+* Defining minimal possible requirements our system should have to solve the problem in given setting*
+
+Enviornment - The start point, destination, vegetation and other obstacles, radar interference as a 2D grid
+Performamce measure - Number of cells it takes to get to destination undetected. (Better measure: Route length/ straight line dist. bw start and dest.)
+Sensors - Satelite signal detectors, Radar detector, user signal detector, visual/sonic input to identify vegetation laid no fly zones
+Actuators - Motor control to allow drone movement, turning and altitude change.
+
+
+* NOTE: before the drone takes off the user already knows the best path from local beam search and is then supposed to decide risk and send
+the drone
+-------------------------------------------------------------------------------------------------------------------------------------------
+2. ALGORITHM:
+*Reference: https://www.youtube.com/watch?v=jhoXO1XF6Fk&ab_channel=GateSmashers
+
+Output: Optimal cost AS WELL AS optimal path
+
+Data Structutes: 
+Priority Queue for open list 
+List for closed list
+Dictionary for grid: {'rowindex_colindex': (isStart, isGoal, isExplorable, Prob1, Prob2)}
+
+** Imp: Try - For optimal path
+dict: {node: 'parent_node'} - Since we keep a closed list, each node can be added only once here. So if we go from goal to start we should be able to find the optimal path
+
+
